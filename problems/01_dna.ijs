@@ -11,10 +11,12 @@ NB. Return: Four integers (separated by spaces) counting the respective number o
 
 
 dna =: 3 : 0
-NB. ": converts the integer to a string
-a=.":+/'A'=y
-c=.":+/'C'=y
-g=.":+/'G'=y
-t=.":+/'T'=y
-a,' ',c,' ',g,' ',t
+a=.+/'A'=y
+c=.+/'C'=y
+g=.+/'G'=y
+t=.+/'T'=y
+NB. ": is the verb "format"
+NB. it converts the array into a printable format,
+NB. with a default of ' ' between entries
+":a,c,g,t
 )
