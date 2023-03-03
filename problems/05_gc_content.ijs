@@ -31,20 +31,35 @@ Rosalind_0808
 NB. data
 d=:test_data
 d=: '>' cutopen test_data
-NB. take first item to write transformation
-i=: {.d
+
+extract_metadata=: 3 : 0
 NB. unbox
-i=: >i
+i=. >y
 NB. slit into boxes by LF (LineFeed)
-i=: LF cut i
+i=. LF cut i
 NB. first item is metadata
-md=: {.i
+>{.i
+)
+metadata=: extract_metadata each d
+
+calculate_gc_data=: 3 : 0
+NB. unbox
+i=. >y
+NB. slit into boxes by LF (LineFeed)
+i=. LF cut i
 NB. Remaining items are the base pairs
-bp=: }. i
+bp=. }. i
 NB. Raze (joins items together into one array)
-bp=: ;bp
+bp=. ;bp
 NB. Number of bases that are C or G?
-nb=: +/('C'=bp),('G'=bp)
+nb=. +/('C'=bp),('G'=bp)
 NB. the percentage of bases that are C or G
-p=: 100 * nb % (# bp)
+100 * nb % (# bp)
+)
+gc_content=: > calculate_gc_data each d
+max_gcc=: (>./ gc_content)
+NB. Index of highest content
+idx=: gc_content i. max_gcc
+md=: idx } metadata
+gcp=: idx } gc_content
 
