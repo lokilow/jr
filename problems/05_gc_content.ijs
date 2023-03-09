@@ -28,9 +28,17 @@ Rosalind_0808
 60.919540
 )
 
+data =: 3 : 0
+try.
+  infile =: 2 } ARGV_z_
+  filedata=: fread infile
+catch.
+  test_data
+end.
+)
 NB. data
-d=:test_data
-d=: '>' cutopen test_data
+d=: data ''
+d=: '>' cutopen d
 
 extract_metadata=: 3 : 0
 NB. unbox
@@ -62,4 +70,10 @@ NB. Index of highest content
 idx=: gc_content i. max_gcc
 md=: idx } metadata
 gcp=: idx } gc_content
+result =: (>md),LF,":gcp
 
+NB. Could wrap this to only write if input filename exists
+outfile =. <'result.txt'
+result fwrite outfile
+NB. Exit script with success
+2!:55 '0'
