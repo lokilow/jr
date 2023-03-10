@@ -28,16 +28,9 @@ Rosalind_0808
 60.919540
 )
 
-data =: 3 : 0
-try.
-  infile =: 2 } ARGV_z_
-  filedata=: fread infile
-catch.
-  test_data
-end.
-)
 NB. data
-d=: data ''
+data=: set_data ''
+d=: data
 d=: '>' cutopen d
 
 extract_metadata=: 3 : 0
