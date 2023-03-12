@@ -28,7 +28,9 @@ boxed=:cutopen data
 a=: >0 } boxed
 b=: >1 } boxed
 
-hamm =: 13 : '(#y) - +/ (x = y)'
+NB. -. applies "not" to a boolean
+NB. took me forever to find this...friggin academics
+hamm =: 13 : '+/ -. x = y'
 
 result =: a hamm b
 outfile =. <'result.txt'
