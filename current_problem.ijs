@@ -1,5 +1,5 @@
 #!jc
-cp=:'problems/fib.ijs'
+cp=:'problems/hamm.ijs'
 l=:load
 
 NB. Expects problem file to define `test_data`.
