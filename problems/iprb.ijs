@@ -36,3 +36,20 @@ test_data=: 0 : 0
 
 test_result=: 0.78333
 
+data=: set_data ''
+d=:".,>cutopen data
+total=:+/d
+dom=:0}d
+het=:1}d
+rec=:2}d
+
+NB. Probability of a dominant child is 1 - probability child has only recessive traits
+prr=:(rec % total) * ((rec - 1) % (total - 1))
+phh=:(het % total) * ((het - 1) % (total - 1))
+phr=:((het % total) * (rec % (total - 1))) + ((rec % total) * (het % (total - 1)))
+
+pDomChild=:1 - prr + (0.5*phr) + (0.25*phh)
+
+outfile =. <'result.txt'
+text_result=: (":pDomChild),LF
+exit text_result fwrite outfile
