@@ -19,7 +19,8 @@ data=:set_data ''
 
 read_codon_table=: 3 : 0
 f=.'data/codon_table.txt'
-fread f
+d=.fread f
+ct=.>(' ' cut >) each cutopen d
 )
 
 ct=:read_codon_table ''
