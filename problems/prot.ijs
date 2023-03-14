@@ -24,3 +24,33 @@ ct=.>(' ' cut >) each cutopen d
 )
 
 ct=:read_codon_table ''
+
+lookup=: 4 : 0
+key=.x
+dict=.y
+value=.''
+for_entry. dict do.
+  if. key -: >0{entry do.
+    value=.>1{entry
+  end.
+end.
+value
+)
+
+rna_to_protein =: 3 : 0
+rna=:y
+protein=:''
+amino_acid=:''
+while. -.amino_acid -: 'Stop' do.
+  protein=:protein,amino_acid
+  codon=:3{.rna
+  rna=:3}.rna
+  amino_acid=: codon lookup ct
+end.
+protein
+)
+
+result=: rna_to_protein data
+outfile=. <'result.txt'
+text_result=: (":result),LF
+exit text_result fwrite outfile
