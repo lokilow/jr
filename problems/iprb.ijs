@@ -39,9 +39,8 @@ test_result=: 0.78333
 data=: set_data ''
 d=:".,>cutopen data
 total=:+/d
-dom=:0}d
-het=:1}d
-rec=:2}d
+NB. Multiple assignment
+'dom het rec' =: d
 
 NB. Probability of a dominant child is 1 - probability child has only recessive traits
 prr=:(rec % total) * ((rec - 1) % (total - 1))
