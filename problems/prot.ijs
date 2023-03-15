@@ -15,7 +15,7 @@ NB. Return: The protein string encoded by s
 test_data=: 0 : 'AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA'
 test_result=: 0 : 'MAMAPRTEINSTRING'
 
-data=:set_data ''
+data=:read_data ''
 
 read_codon_table=: 3 : 0
 f=.'data/codon_table.txt'

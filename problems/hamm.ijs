@@ -23,7 +23,7 @@ CATCGTAATGACGGCCT
 
 test_result=: 7
 
-data=:set_data ''
+data=:read_data ''
 boxed=:cutopen data
 a=: >0 } boxed
 b=: >1 } boxed

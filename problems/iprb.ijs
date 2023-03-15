@@ -36,7 +36,7 @@ test_data=: 0 : 0
 
 test_result=: 0.78333
 
-data=: set_data ''
+data=: read_data ''
 d=:".,>cutopen data
 total=:+/d
 NB. Multiple assignment

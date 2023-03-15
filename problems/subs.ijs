@@ -26,7 +26,7 @@ ATAT
 )
 test_result=:2 4 10
 
-data=:set_data ''
+data=:read_data ''
 ('str';'sstr')=:cutopen data
 
 substrings=: 4 : 0

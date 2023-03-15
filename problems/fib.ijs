@@ -29,7 +29,7 @@ test_data=: 0 : 0
 
 test_result=: 19
 
-data=: set_data ''
+data=: read_data ''
 d=:>cutopen data
 NB. Converts to integer list
 d=:".>cutopen data

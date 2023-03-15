@@ -29,7 +29,7 @@ Rosalind_0808
 )
 
 NB. data
-data=: set_data ''
+data=: read_data ''
 d=: data
 d=: '>' cutopen d
 
