@@ -24,5 +24,26 @@ test_data=: 0 : 0
 GATATATGCATATACTT
 ATAT
 )
-
 test_result=:2 4 10
+
+data=:set_data ''
+('str';'sstr')=:cutopen data
+
+substrings=: 4 : 0
+sstr=.x[str=.y
+lsstr=.#sstr
+index=.0[indices=.i.0
+iterations=.(#str)-lsstr
+while. iterations > 0 do.
+  if. sstr -: lsstr {. str do.
+    indices=. indices,index
+  end.
+  str=.}.str
+  index=.index+1
+  iterations=.iterations-1
+end.
+NB. Rosalind 1-indexes
+1+indices
+)
+
+write_data sstr substrings str

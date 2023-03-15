@@ -13,6 +13,17 @@ else.
   test_data
 end.
 )
+
+write_data=: 3 : 0
+result=: y
+if. 3 = #ARGV_z_ do.
+outfile=. <'result.txt'
+text_result=: (":result),LF
+exit text_result fwrite outfile
+else. 
+  result
+end.
+)
   
 NB. Load current problem
 l cp
