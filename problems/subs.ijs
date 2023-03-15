@@ -39,11 +39,11 @@ while. iterations > 0 do.
     indices=. indices,index
   end.
   str=.}.str
-  index=.index+1
-  iterations=.iterations-1
+  index=.>:index
+  iterations=.<:iterations
 end.
 NB. Rosalind 1-indexes
-1+indices
+>:indices
 )
 
 write_data sstr substrings str
