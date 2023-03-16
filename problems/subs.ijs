@@ -29,7 +29,7 @@ test_result=:2 4 10
 data=:read_data ''
 ('str';'sstr')=:cutopen data
 
-substrings=: 4 : 0
+ss1=: 4 : 0
 sstr=.x[str=.y
 lsstr=.#sstr
 index=.0[indices=.i.0
@@ -46,4 +46,12 @@ NB. Rosalind 1-indexes
 >:indices
 )
 
-write_data sstr substrings str
+ss2=: 4 : 0
+s=.y[ss=.x
+slices=:(#ss)[\s
+matches=:ss-:"1 slices
+1+matches#i.#slices
+)
+
+result=:sstr ss2 str
+write_data result
