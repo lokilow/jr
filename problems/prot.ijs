@@ -53,4 +53,4 @@ protein
 result=: rna_to_protein data
 outfile=. <'result.txt'
 text_result=: (":result),LF
-exit text_result fwrite outfile
+write_data text_result 

@@ -51,4 +51,4 @@ pDomChild=:1 - prr + (0.5*phr) + (0.25*phh)
 
 outfile =. <'result.txt'
 text_result=: (":pDomChild),LF
-exit text_result fwrite outfile
+write_data text_result
